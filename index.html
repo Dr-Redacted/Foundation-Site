@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+<style> 
+
+.center {
+  margin: auto;
+  margin-bottom: auto;
+  margin-bottom: auto;
+  width: 10%;
+  align-self: auto;
+  padding-right: 10%;
+  
+}
+.center2 {
+  margin: auto;
+  margin-bottom: auto;
+  margin-bottom: auto;
+  width: 100%;
+  
+}
+.center3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.vertical-center {
+  margin: -1;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+.fancybutton {
+  position: relative;
+  background-image: linear-gradient(to right, black, #a13a2a 50%,#a13a2a 75%, white 100%);
+  border: 1px solid #FFFFFF;
+  font-size: 10px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fancybutton:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.fancybutton:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+.loader {
+  border-top: 8px solid #000000;
+  border-right: 8px solid rgb(255, 3, 213);
+  border-bottom: 8px solid #000000;
+  border-left: 8px solid rgb(255, 3, 213);
+  border-radius: 50%;
+  width: 240px;
+  height: 240px;
+  animation: spin 2s linear infinite;
+  background-image: repeating-radial-gradient(red, darkorchid 1%, white 2%);
+
+}
+@keyframes spin {
+  0%{ transform: rotate(0deg); background-image: repeating-radial-gradient(red,darkorchid 1%, white 2%);}
+  5%{ transform: rotate(18deg); background-image: repeating-radial-gradient(red, darkorchid 1.5%, white 3%);}
+  10%{ transform: rotate(36deg); background-image: repeating-radial-gradient(red, darkorchid 2%, white 4%);}
+  15%{ transform: rotate(54deg); background-image: repeating-radial-gradient(red, darkorchid 2.5%, white 5%);}
+  20%{ transform: rotate(72deg); background-image: repeating-radial-gradient(red, darkorchid 3%, white 6%);}
+  25%{ transform: rotate(90deg); background-image: repeating-radial-gradient(red, darkorchid 3.5%, white 7%);}
+  30%{ transform: rotate(108deg); background-image: repeating-radial-gradient(red, darkorchid 4%, white 8%);}
+  35%{ transform: rotate(126deg); background-image: repeating-radial-gradient(red, darkorchid 4.5%, white 9%);}
+  40%{ transform: rotate(144deg); background-image: repeating-radial-gradient(red, darkorchid 5%, white 10%);}
+  45%{ transform: rotate(162deg); background-image: repeating-radial-gradient(red, darkorchid 5.5%, white 11%);}
+  50%{ transform: rotate(180deg); background-image: repeating-radial-gradient(red, darkorchid 6%, white 12%);}
+  55%{ transform: rotate(198deg); background-image: repeating-radial-gradient(red, darkorchid 5.5%, white 11%);}
+  60%{ transform: rotate(216deg); background-image: repeating-radial-gradient(red, darkorchid 5%, white 10%);}
+  65%{ transform: rotate(234deg); background-image: repeating-radial-gradient(red, darkorchid 4.5%, white 9%);}
+  70%{ transform: rotate(252deg); background-image: repeating-radial-gradient(red, darkorchid 4%, white 8%);}
+  75%{ transform: rotate(270deg); background-image: repeating-radial-gradient(red, darkorchid 3.5%, white 7%);}
+  80%{ transform: rotate(288deg); background-image: repeating-radial-gradient(red, darkorchid 3%, white 6%);}
+  85%{ transform: rotate(306deg); background-image: repeating-radial-gradient(red, darkorchid 2.5%, white 5%);}
+  90%{ transform: rotate(324deg); background-image: repeating-radial-gradient(red, darkorchid 2%, white 4%);}
+  95%{ transform: rotate(342deg); background-image: repeating-radial-gradient(red, darkorchid 1.5%, white 3%);}
+  100%{ transform: rotate(360deg); background-image: repeating-radial-gradient(red, darkorchid 1%, white 2%);}
+}
+.centeredtext{
+  text-align: center;
+  text-anchor: middle;
+  margin-left: 15%;
+  margin-right: 0%;
+}
+
+#buttonAlign {
+  -webkit-align-self: center; /* Safari 7.0+ */
+  align-self: center;
+}
+
+#clearance{
+
+  background-color: #a13a2a;
+}
+#main{
+  background-color: #a13a2a;
+  
+}
+#validation{
+  padding-right: 25%;
+  padding-left: 25%;
+  width: 50%;
+  align-self: center;
+}
+#visibletext{
+  text-shadow:
+		-1px -1px 0 #ffffff,
+		1px -1px 0 #ffffff,
+		-1px 1px 0 #ffffff,
+		1px 1px 0 #ffffff;
+    
+
+}
+#background{
+  background-image: linear-gradient(to right, black, #a13a2a 50%,#a13a2a 75%, white 100%);
+}
+#blocker{
+  background-image: linear-gradient(to right, black, #a13a2a 50%,#a13a2a 75%, white 100%);
+}
+#passed{
+  padding-right: 25%;
+  padding-left: 25%;
+  width: 50%;
+  align-self: center;
+}
+
+</style>
+
+<script>
+var availability = false;
+var pin = /\d{12}/;
+var level = /[0-5]{1}/;
+var tries = 5;
+var councilFormat = /O5-(\d){1,2}/;
+var councilTries = 3;
+
+function isAvalible(){
+  if(availability === true){
+    mydocsLoad();
+  } else {
+    unavalibleLoad();
+  }
+}
+function marv(){
+
+  var scpnumb = prompt("Enter the numeric designation of an SCP");
+  window.open("http://www.scp-wiki.net/scp-" + scpnumb,"_blank")
+
+}
+
+function mydocsLoad(){
+  document.getElementById("main").style.display ="none";
+  document.getElementById("clearance").style.display = "none";
+  document.getElementById("confirmation").style.display = "none";
+  document.getElementById("validation").style.display = "none";
+  document.getElementById("WIP").style.display = "none"
+  document.getElementById("mydocs").style.display = "inline"
+  document.getElementById("passed").style.display = "none";
+}
+
+function unavalibleLoad(){
+  document.getElementById("main").style.display ="none";
+  document.getElementById("clearance").style.display = "none";
+  document.getElementById("confirmation").style.display = "none";
+  document.getElementById("validation").style.display = "none";
+  document.getElementById("WIP").style.display = "inline";
+  document.getElementById("mydocs").style.display = "none";
+  document.getElementById("passed").style.display = "none";
+}
+
+function loadMain() {
+document.getElementById("main").style.display ="inline";
+document.getElementById("clearance").style.display = "none";
+document.getElementById("confirmation").style.display = "none";
+document.getElementById("validation").style.display = "none";
+document.getElementById("WIP").style.display = "none"
+document.getElementById("mydocs").style.display = "none";
+document.getElementById("passed").style.display = "none";
+}
+
+function clearanceload(){
+document.getElementById("main").style.display = "none";
+document.getElementById("clearance").style.display = "inline";
+document.getElementById("confirmation").style.display = "none";
+document.getElementById("validation").style.display = "none";
+document.getElementById("WIP").style.display = "none"
+document.getElementById("mydocs").style.display = "none";
+document.getElementById("passed").style.display = "none";
+getPin();
+}
+
+function getPin(){
+var inputPIN = prompt("Please enter your 12 digit numeric pin");
+  if(inputPIN.match(pin)){
+    getclearanceLevel()
+  } else {
+  alert("Invalid PIN");
+  getPin();
+  }
+
+}
+function getclearanceLevel(){
+var Inputlevel = prompt("Please enter your Security Clearance Level in numeric form ");
+
+if(Inputlevel.match(level)){
+var levelnumb = parseInt(Inputlevel);
+if(levelnumb >= 0 && levelnumb <=5){
+if(levelnumb === 5){
+  dataValidation("five")
+} else if (levelnumb === 4){
+  dataValidation("four")
+} else if (levelnumb <4){
+  dataValidation("subfour");
+}
+
+}
+} else {
+  tries--;
+  if(tries>0){
+    
+    alert("You have entered an invalid designation you have " + tries + " remaining");
+    getclearanceLevel();
+  } else {
+    alert("You have entered too many invalid numbers - if you are trying to login from outside foundation facility \n" +
+     "a field agent will be sent to apprehend you - if you are inside a facility a the facility's surveillance systems will be monitored and at task force called in, if appropriate");
+     location.href = "http://www.scp-wiki.net/";
+  }
+}
+
+
+}
+
+function getO5perms(){
+  var councilName = prompt("Please enter the designation of the council member that you recived permission from \n "
+  + "and we will obtain confirmation from them");
+
+if(councilName.match(councilFormat)){
+  var councilNumbString = councilName.substr(3)
+var councilNumb = parseInt(councilNumbString);
+if(councilNumb >= 1 && councilNumb <=13){
+  dataValidation("granted");
+}
+
+
+} else {
+  councilTries--;
+  if(councilTries>0){
+
+    alert("You have entered an invalid designation you have " + councilTries + " remaining")
+    getO5perms();
+  } else {
+    alert("You have entered too many invalid designations - if you are trying to login from outside foundation facility \n" +
+     "a field agent will be sent to apprehend you - if you are inside a facility a the facility's surveillance systems will be monitored and at task force called in, if appropriate");
+     location.href = "http://www.scp-wiki.net/";
+  }
+}
+
+
+}
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async function dataValidation(accessType){
+  document.getElementById("main").style.display = "none";
+  document.getElementById("clearance").style.display = "none";
+  document.getElementById("confirmation").style.display = "none";
+  document.getElementById("WIP").style.display = "none"
+  document.getElementById("validation").style.display = "inline";
+  document.getElementById("mydocs").style.display = "none";
+  document.getElementById("passed").style.display = "none";
+  if(accessType === "five") {
+  await sleep((Math.random()*20000)+10000);
+    clearancePassed();
+  } else if(accessType === "subfour"){
+    await sleep((Math.random()*5000)+5000);
+    alert("Your clearance level is too low redirecting");
+    location.href = "http://www.scp-wiki.net/";
+  } else if(accessType === "granted"){
+    await sleep((Math.random()*25000)+15000);
+    clearancePassed();
+  } else if(accessType === "four"){
+    await sleep((Math.random()*5000)+5000);
+    clearanceConfirm()
+  }
+}
+
+function clearancePassed(){
+  document.getElementById("main").style.display = "none";
+document.getElementById("clearance").style.display = "none";
+document.getElementById("confirmation").style.display = "none";
+document.getElementById("validation").style.display = "none";
+document.getElementById("WIP").style.display = "none"
+document.getElementById("mydocs").style.display = "none";
+document.getElementById("passed").style.display = "inline"
+
+}
+
+
+function clearanceConfirm(){
+getO5perms();
+
+}
+</script>
+
+</head>
+
+
+
+
+  <body onload="loadMain();" style="background-color: #a13a2a;" id="background">
+    
+      <div style = "background-color: #a13a2a; background-image: linear-gradient(to right, black, #a13a2a 50%,#a13a2a 75%, white 100%);">
+        <div id="main">
+          <h1 style="text-align: center;" id="visibletext"> Please confirm your identity by clicking on the foundation logo below</h1>
+          <h4 style="text-align: center;" id="visibletext"> Note: this site requires Javascript enabled to work</h4>
+            <div style = "background-color: #a13a2a; background-image: linear-gradient(to right, black, #a13a2a 50%,#a13a2a 75%, white 100%);">
+            <div class="center" >
+              <div class="vertical-center" style = "background-color: #FFFFFF;">
+                  <button style="height: 240px; width:240px; border-color: #FFFFFF00; background-color: #FFFFFF00" onclick = "clearanceload()" >
+                    <img class="center3" style="height: 240px; width:240px;" src = "https://upload.wikimedia.org/wikipedia/commons/e/ec/SCP_Foundation_%28emblem%29.svg"/>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer" style="background-image: linear-gradient(to right, black, #a13a2a 50%,#a13a2a 75%, white 100%);">
+          <div class = "center2">
+          <a href="http://www.scp-wiki.net/">
+              <button type="button" id= "buttonAlign" class="fancybutton">
+                Proceed back to the main foundation site
+              </button>
+            </a>
+
+            <a href="https://commons.wikimedia.org/wiki/File:SCP_Foundation_(emblem).svg">
+              <button type="button" id= "buttonAlign" class="fancybutton">
+                  logo source
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div id="passed">
+          <div class="vertical-center" style="  padding-right: 0%;
+          padding-left: 0%;
+          width: 100%;
+          align-self: center;">
+          <button type="button" id= "buttonAlign" class="fancybutton" onclick = "isAvalible()">
+            My SCP Research
+          </button>
+  
+        <button type="button" id= "buttonAlign" class="fancybutton" onclick = "marv();">
+         Document Lookup 
+        </button>
+        </div>
+      </div>
+        <div id= "mydocs">
+          
+        </div>
+      </div>
+
+      <div id="clearance" style = "background-color: #a13a2a;">
+      
+      
+      
+      </div>
+
+      <div id = "validation">
+        <div class = "center" >
+          <div class="vertical-center">
+            <div class="loader">
+                <img class="center3" style="height: 240px; width:240px;" src = "https://upload.wikimedia.org/wikipedia/commons/e/ec/SCP_Foundation_%28emblem%29.svg"/>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div id="confirmation">
+        <div class = "center" >
+            <div class="vertical-center">
+              <h2>You do not have the proper access rights, if you have recieved validation from the O5 council, please press the button below</h2>
+                <button type="button" id= "buttonAlign" class="fancybutton" onclick = "getO5perms">
+            </div>
+          </div>
+    </div>
+
+    <div id="WIP">
+        
+            <div class="vertical-center" style="  padding-right: 0%;
+            padding-left: 0%;
+            width: 100%;
+            align-self: center;">
+      <h1 class="centeredtext" id="visibletext">This area contaions sensitive information that is still being proccessed</h1>
+      <h1 class="centeredtext" id="visibletext">By order of O5 this information is not yet avalible</h1>
+      <button type="button" id= "buttonAlign" class="fancybutton" onclick = "clearancePassed();">
+          go back 
+      </button>
+    </div>
+    
+</div>
+</body>
+
+</html>
